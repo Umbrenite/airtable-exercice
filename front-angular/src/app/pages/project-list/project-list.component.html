@@ -1,5 +1,4 @@
 <div class="search-container">
-
     <div class="flex flex-row justify-between top-searchbar">
         <h2>32 Projets</h2>
         <input
@@ -8,21 +7,14 @@
             [(ngModel)]="searchQuery"
             class="search-input" />
     </div>
-
 </div>
 
-<div class="card-list">
-    <div
-        *ngFor="let card of filterCards()"
-        class="card">
-        <img
-            [src]="card.image.src"
-            [alt]="card.image.alt"
-            class="card-image" />
-        <div class="card-content">
-            <h3 class="card-title">{{ card.title }}</h3>
-            <h4 class="card-subtitle">{{ card.subtitle }}</h4>
-            <p class="card-description">{{ card.content.text }}</p>
-        </div>
-    </div>
+<div class="flex flex-wrap justify-start">
+  <!-- <ng-content *ngFor="let card of filterCards()">
+    <project-card class="m-8" title="{{card.title}}" subtitle="{{card.subtitle}}" description="{{card.content.text}}" likes="0" imageSource="{{card.image.src}}" imageAlt="{{card.image.alt}}"></project-card>
+  </ng-content> -->
 </div>
+  
+  
+
+
