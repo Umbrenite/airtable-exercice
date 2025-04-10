@@ -1,0 +1,28 @@
+<div class="search-container">
+
+    <div class="flex flex-row justify-between top-searchbar">
+        <h2>32 Projets</h2>
+        <input
+            type="text"
+            placeholder="Search for a breed..."
+            [(ngModel)]="searchQuery"
+            class="search-input" />
+    </div>
+
+</div>
+
+<div class="card-list">
+    <div
+        *ngFor="let card of filterCards()"
+        class="card">
+        <img
+            [src]="card.image.src"
+            [alt]="card.image.alt"
+            class="card-image" />
+        <div class="card-content">
+            <h3 class="card-title">{{ card.title }}</h3>
+            <h4 class="card-subtitle">{{ card.subtitle }}</h4>
+            <p class="card-description">{{ card.content.text }}</p>
+        </div>
+    </div>
+</div>

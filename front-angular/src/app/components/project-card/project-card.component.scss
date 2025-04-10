@@ -1,0 +1,19 @@
+.example-card {
+    max-width: 400px;
+  }
+  
+  .example-header-image {
+    background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg');
+    background-size: cover;
+  }
+
+  .heart {
+    --c: red;
+    width: 25px;
+    aspect-ratio: 1;
+    background:
+     radial-gradient(at 70% 31%,var(--c) 29%,#0000 30%),
+     radial-gradient(at 30% 31%,var(--c) 29%,#0000 30%),
+     conic-gradient(from -45deg at 50% 84%,var(--c) 90deg,#0000 0) 
+      bottom/100% 50% no-repeat;
+    }

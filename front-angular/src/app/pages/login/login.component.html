@@ -1,0 +1,43 @@
+<div class="font">
+    <div class="form-encapsuler">
+        <span class="form-title libre-franklin-600">Connexion à l'espace administrateur</span>
+        <form class="flex flex-col items-start">
+            <mat-form-field class="w-full">
+                <mat-label>Email</mat-label>
+                <input
+                    matInput
+                    placeholder="email@example.com"
+                    [formControl]="email"
+                    (blur)="updateErrorMessage()"
+                    required />
+                @if (email.invalid) {
+                    <mat-error>{{errorMessage()}}</mat-error>
+                }
+            </mat-form-field>
+            <mat-form-field class="w-full">
+                <mat-label>Mot de passe</mat-label>
+                <input matInput [type]="hide() ? 'password' : 'text'" />
+                <button
+                    type="button"
+                    mat-icon-button
+                    matSuffix
+                    (click)="clickEvent($event)"
+                    [attr.aria-label]="'Hide password'"
+                    [attr.aria-pressed]="hide()">
+                    <mat-icon>{{hide() ? 'visibility_off' :
+                        'visibility'}}</mat-icon>
+                </button>
+            </mat-form-field>
+
+            <button class="bg-yellow-400 rounded-3xl px-4 py-3 text-md" type="submit">Se connecter</button>
+        </form>
+    </div>
+    <div class="right-image">
+        <span class="white-text right-image-title libre-franklin-500">Bon retour
+            !</span>
+        <span class="white-text right-image-subtitle libre-franklin-200">
+            <i>Veuillez vous connecter en tant <br>qu'administrateur</i>
+        </span>
+        <img src="/src/assets/pictures/figure.png" alt>
+    </div>
+</div>

@@ -1,0 +1,48 @@
+.font {
+    height: 100vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+  }
+  
+  .form-encapsuler {
+    background-color: white;
+    width: 38vw;
+    height: 50vh;
+    border-radius: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+    padding-left: 3rem;
+  }
+  
+  .form-register-path {
+    font-size: 0.8rem;
+    padding-left: 1rem;
+  }
+  
+  .form-title {
+    font-size: 1.5rem;
+    padding-bottom: 2.5rem;
+  }
+  
+  .right-image {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+  
+    img {
+      width: 400px;
+    }
+    .right-image-title {
+      font-size: 3rem;
+    }
+    .right-image-subtitle {
+      font-size: 2rem;
+      padding: 2.5rem 0;
+    }
+  }
+  
