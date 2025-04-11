@@ -2,7 +2,7 @@
   <div class="flex flex-row justify-end items-center h-20">
     <img src="{{imageSource}}" alt="{{imageAlt}}" class="img-dimensions">
     <div class="pr-5">
-      <button mat-fab extended>
+      <button mat-fab extended (click)="submitLike()">
         <mat-icon>favorite</mat-icon>
         {{ likes }}
       </button>
@@ -12,6 +12,9 @@
   <span class="pl-7 text-xl text-gray-400 font-medium">{{subtitle}}</span>
   <h3 class="pl-7 font-bold text-3xl">{{title}}</h3>
   <h4 class="pl-7 text-sm text-gray-500 max-w-[300px] truncate">{{description}}</h4> 
+  <div class="flex flex-row pl-7">  
+    <span class="mr-2 bg-blue-200 rounded-lg px-2" *ngFor="let techno of technos">{{techno}}</span>
+  </div>
   
-  <a href=""><button class="ml-7 mt-4 bg-yellow-400 rounded-lg p-3 cursor-pointer">Plus de détails</button></a>
+  <a routerLink="/project-details/{{id}}"><button class="ml-7 mt-4 bg-yellow-400 rounded-lg p-3 cursor-pointer">Plus de détails</button></a>
 </div>

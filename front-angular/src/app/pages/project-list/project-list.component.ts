@@ -2,11 +2,9 @@ import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { ProjectCardComponent } from '../../components/project-card/project-card.component';
 import { FormsModule } from '@angular/forms';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { firstValueFrom } from 'rxjs';
-import { environment } from '../../../environments/environment';
-import Airtable, { FieldSet, Records } from 'airtable';
+import { HttpClient } from '@angular/common/http';
 import { Projets } from '../../../types/Projets';
+import { fetchAll } from '../../airtable/fetchMethods';
 
 
 @Component({
@@ -21,25 +19,9 @@ export class ProjectListComponent {
 
   searchQuery: string = '';
   listOfCards : Projets[] = [];
-  base = new Airtable({ apiKey: environment.airtableToken }).base('appgZOHa6wwe5JCux');
 
   async ngOnInit() {
-    this.base.table('Projets').select({
-    }).eachPage(
-      (records: Records<FieldSet>, fetchNextPage: () => void) => {
-        records.forEach((record) => {
-          this.listOfCards.push(record.fields as Projets);
-        });
-    
-        fetchNextPage();
-      },
-      function done(err: Error | null) {
-        if (err) {
-          console.error(err);
-          return;
-        }
-      }
-    ); 
+    fetchAll('Projets', this.listOfCards);    
   }
 
   filterCards() {

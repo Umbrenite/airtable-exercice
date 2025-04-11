@@ -11,7 +11,15 @@
 
 <div class="flex flex-wrap justify-start">
   <ng-content *ngFor="let card of filterCards()">
-    <project-card class="m-8" title="{{card.Titre}}" subtitle="{{card.Soustitre}}" description="{{card.Description}}" imageSource="{{card['URL (from Visuels)']}}" likes="{{card.NombreLikes}}"></project-card>
+    <project-card class="m-8" 
+      title="{{card.Titre}}" 
+      subtitle="{{card.Soustitre}}" 
+      description="{{card.Description}}" 
+      imageSource="{{card['URL (from Visuels)']}}" 
+      likes="{{card.NombreLikes}}"
+      [technos]="card.NomTechno"
+      id="{{card.recordId}}"
+    ></project-card>
   </ng-content>
 </div>
   
