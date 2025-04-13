@@ -11,7 +11,7 @@
 
 <div class="flex flex-wrap justify-start">
   <ng-content *ngFor="let card of filterCards()">
-    <project-card class="m-8" 
+    <project-card *ngIf="card.Publication === true" class="m-8" 
       title="{{card.Titre}}" 
       subtitle="{{card.Soustitre}}" 
       description="{{card.Description}}" 

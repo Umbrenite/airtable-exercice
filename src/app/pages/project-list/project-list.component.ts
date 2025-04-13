@@ -20,8 +20,8 @@ export class ProjectListComponent {
   searchQuery: string = '';
   listOfCards : Projets[] = [];
 
-  async ngOnInit() {
-    fetchAll('Projets', this.listOfCards);        
+  ngOnInit() {
+    fetchAll('Projets', this.listOfCards);
   }
 
   filterCards() {
