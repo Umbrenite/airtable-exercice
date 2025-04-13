@@ -3,7 +3,7 @@ import { FieldSet } from "airtable"
 export type Projets = FieldSet & {
     ID : string,
     Titre : string,
-    NombreLikes : string,
+    NombreLikes : number,
     Description : string,
     Publication : string,
     NomTechno : string[],

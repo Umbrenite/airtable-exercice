@@ -16,7 +16,7 @@
       subtitle="{{card.Soustitre}}" 
       description="{{card.Description}}" 
       imageSource="{{card.URLVisuel}}" 
-      likes="{{card.NombreLikes}}"
+      [likes]="+card.NombreLikes"
       [technos]="card.NomTechno"
       id="{{card.recordId}}"
       [projectId]="+card.ID"

@@ -31,7 +31,7 @@ export class ProjectCardComponent {
   @Input() imageSource = '';
   @Input() imageAlt = '';
   @Input() description = '';
-  @Input() likes = 0;
+  @Input() likes : number = 0;
   @Input() technos: string[] = [];
 
   ngOnInit() {
