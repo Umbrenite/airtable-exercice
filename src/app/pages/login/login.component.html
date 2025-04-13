@@ -1,22 +1,20 @@
 <div class="font">
     <div class="form-encapsuler">
-        <span class="form-title libre-franklin-600">Connexion à l'espace administrateur</span>
-        <form class="flex flex-col items-start">
+        <span class="form-title">Connexion à l'espace administrateur</span>
+            <div class="bg-red-500 px-3 mb-3 flex flex-col justify-center" *ngIf="formErrors().length > 0">
+                <div *ngFor="let err of formErrors()">{{ err }}</div>
+            </div>
+            <form class="flex flex-col items-start" [formGroup]="loginForm" (ngSubmit)="onSubmit()">
             <mat-form-field class="w-full">
                 <mat-label>Email</mat-label>
-                <input
-                    matInput
-                    placeholder="email@example.com"
-                    [formControl]="email"
-                    (blur)="updateErrorMessage()"
-                    required />
+                <input matInput placeholder="email@example.com" (blur)="updateErrorMessage()" required  formControlName="email"/>
                 @if (email.invalid) {
                     <mat-error>{{errorMessage()}}</mat-error>
                 }
             </mat-form-field>
             <mat-form-field class="w-full">
                 <mat-label>Mot de passe</mat-label>
-                <input matInput [type]="hide() ? 'password' : 'text'" />
+                <input matInput [type]="hide() ? 'password' : 'text'" formControlName="password" />
                 <button
                     type="button"
                     mat-icon-button
@@ -29,15 +27,7 @@
                 </button>
             </mat-form-field>
 
-            <button class="bg-yellow-400 rounded-3xl px-4 py-3 text-md" type="submit">Se connecter</button>
+            <button class="bg-yellow-400 rounded-3xl px-4 py-3 text-md cursor-pointer" type="submit">Se connecter</button>
         </form>
-    </div>
-    <div class="right-image">
-        <span class="white-text right-image-title libre-franklin-500">Bon retour
-            !</span>
-        <span class="white-text right-image-subtitle libre-franklin-200">
-            <i>Veuillez vous connecter en tant <br>qu'administrateur</i>
-        </span>
-        <img src="/src/assets/pictures/figure.png" alt>
     </div>
 </div>
