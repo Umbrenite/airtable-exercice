@@ -7,8 +7,11 @@ export type Projets = FieldSet & {
     Description : string,
     Publication : string,
     NomTechno : string[],
-    Visuels : string,
-    Videos : string,
+    URLVisuel : string,
+    URLVideo : string,
     Soustitre: string,
     recordId : string,
+    UtilisateurSurProjet: string,
+    NomUtilisateur: string[],
+    PrenomUtilisateur: string[],
 }

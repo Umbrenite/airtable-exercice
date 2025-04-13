@@ -20,10 +20,16 @@ export function fetchAll(tableName : string, receiver: any) {
     );
 }
 
-export function findSpecific(tableName : string, identifier: string, receiver: any) {
-    base.table(tableName).find(identifier, function(err, record) {
-        if (err) { console.error(err); return; }
-        console.log('Retrieved', record?.id);
-        receiver.push(record?.fields);
+export function findSpecific(tableName: string, identifier: string): Promise<any> {
+  return new Promise((resolve, reject) => {
+    base(tableName).find(identifier, function(err, record) {
+      if (err) {
+        console.error(err);
+        reject(err);
+        return;
+      }
+      console.log('Retrieved', record?.id);
+      resolve(record?.fields);
     });
+  });
 }
