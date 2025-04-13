@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { Projets } from '../../../types/Projets';
-import { findSpecific } from '../../airtable/fetchMethods';
+import { findSpecificCard } from '../../airtable/fetchMethods';
 import { ActivatedRoute, RouterLink } from '@angular/router';
 import { CommonModule } from '@angular/common';
 
@@ -24,7 +24,7 @@ export class ProjectDetailsComponent {
     });
 
     try {
-      this.card = await findSpecific('Projets', this.id || '{}');
+      this.card = await findSpecificCard('Projets', this.id || '{}');
       console.log(this.card);
       
     } catch (err) {

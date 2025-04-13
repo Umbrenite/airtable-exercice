@@ -57,4 +57,11 @@ export class AuthService {
 
   getUserId(): string | null {
     return sessionStorage.getItem('userId');
-  }}
+  }
+
+  getUserIdNumber(): string | null {
+    return sessionStorage.getItem('userIdNumber');
+  }
+}
+
+

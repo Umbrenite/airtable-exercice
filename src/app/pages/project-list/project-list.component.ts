@@ -21,7 +21,7 @@ export class ProjectListComponent {
   listOfCards : Projets[] = [];
 
   async ngOnInit() {
-    fetchAll('Projets', this.listOfCards);    
+    fetchAll('Projets', this.listOfCards);        
   }
 
   filterCards() {

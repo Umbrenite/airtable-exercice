@@ -2,7 +2,7 @@
   <div class="flex flex-row justify-end items-center h-20">
     <img src="{{imageSource}}" alt="{{imageAlt}}" class="img-dimensions">
     <div class="pr-5">
-      <button mat-fab extended (click)="submitLike()">
+      <button extended (click)="submitLike()" class="py-3 px-5 rounded-xl shadow-md/20 bg-{{likeButtonColor}} hover:bg-light-{{likeButtonColor}}">
         <mat-icon>favorite</mat-icon>
         {{ likes }}
       </button>

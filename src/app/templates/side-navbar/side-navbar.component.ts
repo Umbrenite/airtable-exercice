@@ -16,6 +16,7 @@ export class SideNavbarComponent {
 
   ngOnInit() {
     this.checkIfTokenExists = this.authService.isLoggedIn();
+    console.log(sessionStorage);
   }
 
   checkIfTokenExists : Boolean = false

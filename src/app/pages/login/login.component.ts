@@ -58,9 +58,10 @@ export class LoginComponent {
     
     if (this.loginForm.valid) {
       try {
-        this.authService.login(this.loginForm.value).subscribe((response) => {
+        this.authService.login(this.loginForm.value).subscribe((response) => {          
           sessionStorage.setItem('token', uuidv4());
           sessionStorage.setItem('userId', response.id);
+          sessionStorage.setItem('userIdNumber', response.fields.ID);
           console.log(sessionStorage);
   
           this.router.navigate(['/home']).then(() => {
